@@ -28,11 +28,7 @@ jobs:
         uses: actions/download-artifact@v4
         with:
           name: hello-artifact
-
-      - name: Move downloaded file to ./artifacts
-        run: |
-          mkdir -p ./artifacts
-          mv hello.txt ./artifacts/
+          path: ./artifacts # sets the path here not in VM
 
       - name: Display content of file
         run: cat ./artifacts/hello.txt
